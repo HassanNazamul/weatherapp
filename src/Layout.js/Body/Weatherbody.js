@@ -1,5 +1,4 @@
-
-function Weatherbody() {
+const Weatherbody = () => {
   return (
     <section className="vh-100">
       <div className="container py-5 h-100">
@@ -69,7 +68,10 @@ function Weatherbody() {
 
                 <div className="d-flex flex-row align-items-center">
                   <p className="mb-0 me-4">Scattered Clouds</p>
-                  <i className="fas fa-cloud fa-3x" style={{color: "#eee"}}></i>
+                  <i
+                    className="fas fa-cloud fa-3x"
+                    style={{ color: "#eee" }}
+                  ></i>
                 </div>
               </div>
             </div>
@@ -78,6 +80,6 @@ function Weatherbody() {
       </div>
     </section>
   );
-}
+};
 
 export default Weatherbody;
