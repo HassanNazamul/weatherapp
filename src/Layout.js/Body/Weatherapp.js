@@ -1,4 +1,4 @@
-const Weatherbody = () => {
+const Weatherapp = () => {
   return (
     <section className="vh-100">
       <div className="container py-5 h-100">
@@ -82,4 +82,4 @@ const Weatherbody = () => {
   );
 };
 
-export default Weatherbody;
+export default Weatherapp;

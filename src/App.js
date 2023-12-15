@@ -1,4 +1,4 @@
-import Weatherbody from "./Layout.js/Body/Weatherbody";
+import Weatherapp from "./Layout.js/Body/Weatherapp";
 import NavBar from "./Layout.js/Header/NavBar";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
     <>
       <NavBar/>
-      <Weatherbody/>
+      <Weatherapp/>
     </>
 
   );
