@@ -6,6 +6,7 @@ const Weatherapp = () => {
           <div className="col-md-8 col-lg-6 col-xl-4">
             <h3 className="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
 
+            {/* Search location */}
             <div className="input-group rounded mb-3">
               <input
                 type="search"
@@ -14,16 +15,14 @@ const Weatherapp = () => {
                 aria-label="Search"
                 aria-describedby="search-addon"
               />
-              <a href="#!" type="button">
-                <span
-                  className="input-group-text border-0 fw-bold"
-                  id="search-addon"
-                >
+              <button type="button" className="btn btn-outline-secondary" >
+                
                   Check!
-                </span>
-              </a>
+                
+              </button>
             </div>
 
+            {/* Button to change between celcius and farenheit */}
             <div className="mb-4 pb-2">
               <div className="form-check form-check-inline">
                 <input
@@ -54,6 +53,7 @@ const Weatherapp = () => {
             </div>
 
             <div className="card shadow-0 border">
+                
               <div className="card-body p-4">
                 <h4 className="mb-1 sfw-normal">New York, US</h4>
                 <p className="mb-2">
@@ -66,14 +66,18 @@ const Weatherapp = () => {
                   Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong>
                 </p>
 
-                <div className="d-flex flex-row align-items-center">
+                {/* Cloud design */}
+                {/* <div className="d-flex flex-row align-items-center">
                   <p className="mb-0 me-4">Scattered Clouds</p>
                   <i
                     className="fas fa-cloud fa-3x"
                     style={{ color: "#eee" }}
                   ></i>
-                </div>
+                </div> */}
+
               </div>
+
+
             </div>
           </div>
         </div>
