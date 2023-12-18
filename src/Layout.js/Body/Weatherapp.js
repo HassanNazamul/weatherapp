@@ -1,24 +1,54 @@
+import { useState } from "react";
+
 const Weatherapp = () => {
+  const [location, setLocation] = useState("");
+
+  const [weatherData, setWeatherData] = useState({
+    name: "",
+  });
+
+  const searchHandle = (event) => {
+    event.preventDefault();
+
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=` +
+        location +
+        `&appid=e66c42734b3c641feb993d197d71838c`
+    )
+      .then((data) => data.json())
+      .then(function (data) {
+        setWeatherData({
+          name : data.name
+        });
+      });
+  };
+
   return (
     <section className="vh-100">
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-8 col-lg-6 col-xl-4">
-            <h3 className="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+            <h3 id="bhoki" className="mb-4 pb-2 fw-normal">
+              Check the weather forecast
+            </h3>
 
             {/* Search location */}
             <div className="input-group rounded mb-3">
               <input
                 type="search"
                 className="form-control rounded"
-                placeholder="City"
+                placeholder="Enter City"
                 aria-label="Search"
                 aria-describedby="search-addon"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
-              <button type="button" className="btn btn-outline-secondary" >
-                
-                  Check!
-                
+              <button
+                onClick={searchHandle}
+                type="button"
+                className="btn btn-outline-secondary"
+              >
+                Check!
               </button>
             </div>
 
@@ -53,15 +83,16 @@ const Weatherapp = () => {
             </div>
 
             <div className="card shadow-0 border">
-                
               <div className="card-body p-4">
-                <h4 className="mb-1 sfw-normal">New York, US</h4>
+                <h4 className="mb-1 sfw-normal"> {weatherData.name} </h4>
                 <p className="mb-2">
                   Current temperature: <strong>5.42°C</strong>
                 </p>
+
                 <p>
                   Feels like: <strong>4.37°C</strong>
                 </p>
+
                 <p>
                   Max: <strong>6.11°C</strong>, Min: <strong>3.89°C</strong>
                 </p>
@@ -74,10 +105,7 @@ const Weatherapp = () => {
                     style={{ color: "#eee" }}
                   ></i>
                 </div> */}
-
               </div>
-
-
             </div>
           </div>
         </div>
