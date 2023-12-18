@@ -1,12 +1,15 @@
 import { useState } from "react";
 
 const Weatherapp = () => {
+  //defining the var to store the data entered by the user
   const [location, setLocation] = useState("");
 
+  //storing the object of weather api
   const [weatherData, setWeatherData] = useState({
     name: "",
   });
 
+  // this event is being handled by button: line : 47
   const searchHandle = (event) => {
     event.preventDefault();
 
@@ -18,7 +21,7 @@ const Weatherapp = () => {
       .then((data) => data.json())
       .then(function (data) {
         setWeatherData({
-          name : data.name
+          name: data.name,
         });
       });
   };
