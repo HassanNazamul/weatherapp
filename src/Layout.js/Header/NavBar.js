@@ -1,21 +1,27 @@
 function NavBar() {
-    
   return (
-    <nav class="navbar navbar-light bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
-        <form class="d-flex input-group w-auto">
+    <nav className="navbar navbar-light bg-body-tertiary">
+      <div className="container-fluid">
+        <a className="navbar-brand">Weather app</a>
+
+        <form className="d-flex input-group w-auto">
           <input
             type="search"
-            class="form-control rounded"
+            className="form-control rounded"
             placeholder="Search"
             aria-label="Search"
             aria-describedby="search-addon"
           />
-          <span class="input-group-text border-0" id="search-addon">
-            <i class="fas fa-search"></i>
-          </span>
+          <button
+            type="submit"
+            className="btn btn-outline-secondary"
+            id="search-addon"
+          >
+            {/* Adding Search Icon */}
+            <i className="fa fa-search"></i>
+          </button>
         </form>
+        
       </div>
     </nav>
   );
